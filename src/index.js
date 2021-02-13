@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const socketio = require("socket.io");
 const profane = require('bad-words')
-
+const PORT=process.env.PORT || 3000
 //Core modules
 const { GenerateMessage } = require('../src/utils/messages')
 const { GenerateLocationMessage } = require('../src/utils/messages')
@@ -118,6 +118,6 @@ io.on("connection", (socket) => {
 
 
 
-server.listen(3000, () => {
+server.listen(PORT, () => {
   console.log("app is up and Running on port 3000");
 });
